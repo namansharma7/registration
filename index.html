@@ -1,0 +1,260 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-family: Algerian;
+                font-size: 18px;
+            }
+            input[type=text],input[type=password]{
+                
+                border:2px solid black;
+                width:300px;
+                height:28px
+                
+                
+            }
+            input::placeholder{
+                font-size: 15px;
+                font-family: Algerian;
+            }
+            .input{
+                float:left;
+               
+            }
+            
+            #name{
+                margin-left:200px;
+            }
+            #name2{
+                margin-left:205px;
+            }
+            #pwd1{
+                margin-left:209px;
+            }
+            #pwd2{
+                margin-left:132px;
+            }
+            #email{
+                margin-left:250px;
+            }
+            
+            .row{
+                width:100%;
+                height:50px;
+                margin-top:5px;
+                display:block;
+                float:left;
+            }
+            .main{
+                width:70%;
+                margin:auto;
+                border: 2px solid black;
+                padding : 10px;
+            }
+            textarea{
+                border:2px solid black;
+                font-family: Algerian;
+                width:300px;
+                height:70px;
+                margin-left:225px;
+                
+            }
+            
+            .hob{
+                display:inline;
+                
+                
+            }
+            .text{
+                float:left;
+                display: inline;
+            }
+           h3{
+            text-align: center;
+           }
+           
+           input[type=submit],input[type=reset]{
+                font-size: 15px;
+                font-family: Algerian;
+           }
+           .button{
+            margin:25px 0px 0px 330px;
+
+           }
+          #ename{
+            float:right;
+          }
+          span{
+            color: red;
+          }
+          .hobb,.gen{
+            float:left;
+            margin-left:250px;
+            
+          }
+          .radio{
+            display: inline;
+          }
+          #gender{
+            margin-top: 30px;
+          }
+          span{
+            margin-left:50px;
+          }
+          #add{
+            float: right;
+            
+            
+          }
+            @media screen and (max-width : 1290px){
+                input[type=text],input[type=password],textarea{
+                    border:2px solid black;
+                    width:250px;
+                    height:28px;   
+                }
+                span{
+                    font-size: 10px;
+                    margin-left: 20px;
+                }
+                #name{
+                    margin-left: 130px;
+                }
+                #name2{
+                    margin-left:132px;
+                }
+                #pwd1{
+                    margin-left:137px;
+                }
+                #pwd2{
+                    margin-left:60px;
+                }
+                #email{
+                    margin-left:176px;
+                }
+                #address{
+                    margin-left:150px;
+                    height: 50px;
+                }
+                .hobb,.gen{
+                    margin-left:170px;
+                }
+            }
+            @media screen and (max-width: 960px){
+                .main{
+                    width:100%;
+                    
+                }
+            }
+        </style>
+       <script href="external.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <form onsubmit=" return validate()" id="frm" action="https://formsubmit.co/721b7e6a34fedbbc45094ea526fc7085" method="post">
+                <h3>Registration form</h3><br><br>
+                <div class="row">
+                    <div class="text">
+                        <label>First Name </label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<input type="text" id="name"  onkeyup="valName(this.id,'ename')" name="name1" autocomplete="off" placeholder="enter your first name here">
+                        <span id="ename"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>Last Name</label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<input type="text" id="name2"  onkeyup="valName(this.id,'ename2')" name="last_name" autocomplete="off" placeholder="enter your last name here" >
+                        <span id="ename2"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>Password</label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<input type="password" id="pwd1"  onkeyup="valPwd1(this.id,'epwd1')" name="password" autocomplete="off" placeholder="enter your Password here" >
+                        <span id="epwd1"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>confirm password</label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<input type="password" id="pwd2"  onkeyup="valPwd2(this.id,'pwd1','epwd2')" name="confirm_password" autocomplete="off" placeholder="enter your confirm password here" >
+                        <span id="epwd2"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>email</label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<input type="text" id="email" onkeyup="valemail(this.id,'emails')" name="email" autocomplete="off" placeholder="enter your email here" >
+                        <span id="emails"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>Address</label>
+                    </div>
+                    <div class="input">
+                        :&nbsp;&nbsp;<textarea cols="50" rows="5" id="address" placeholder="start writing your address from here" name="address" onkeyup="valadd()" ></textarea>
+                        <span id="add"></span>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="row" id="gender">
+                    <div class="text">
+                        <label>Gender</label>
+                    </div>
+                    <div class="gen">
+                        <div class="radio">
+                            Male<input type="radio" name="gender" value="Male">
+                        </div>
+                        <div class="radio">
+                            FeMale<input type="radio" name="gender" value="female">
+                        </div>
+                        <div class="radio">
+                            other<input type="radio" name="gender" value="other">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="text">
+                        <label>Hobbies</label>
+                    </div>
+                    <div class="hobb">
+                        <div class="hob">
+                            cricket<input type="checkbox" name="hobbies" value="Cricket" id="mat1" onclick="valhob()">
+                        </div>
+                        <div class="hob">
+                            football<input type="checkbox" name="hobbies" value="football" id="mat2" >
+                        </div>
+                        <div class="hob">
+                            other<input type="checkbox" name="hobbies" value="other" id="mat3" >
+                        </div>
+                        
+                    </div>
+                    <span id="cri"></span>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="click to submit">
+                    <input type="reset" value="start all over">
+                </div>
+            </form>
+        </div>
+        
+    </body>
+</html>
